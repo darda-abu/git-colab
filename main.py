@@ -7,7 +7,6 @@ def divide(a, b):
         return None
 
 
-
 operation = input().split()
 
 ans = 0
