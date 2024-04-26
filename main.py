@@ -6,6 +6,7 @@ class Calculator:
     
     def substraction(self, num1, num2) -> int:
         return self.num1 - self.num2 
+
     
     def addition(num1,num2):
         return self.num1 + self.num2 
@@ -27,17 +28,15 @@ class Calculator:
         symbol = input()
         calc_obj = Calculator(num1, num2, symbol)
 
-        if symbol == '-':
+
+        if symbol == '+':
+            print("Addition: ", calc_obj.addition(num1,num2)) 
+        elif symbol == '-':
             print("Substraction: ", calc_obj.substraction(num1, num2)) 
-        elif symbol == '/':
-            print("Division: ", calc_obj.division(num1, num2))
-            
-        elif symbol == '+':
-            print("Addition: ", calc_obj.addition(num1,num2))
-            
         elif symbol == '*':
             print("Multiplication: ", calc_obj.multiplication(num1,num2))
-            
+        elif symbol == '/':
+            print("Division: ", calc_obj.division(num1, num2))
         else:
             print("Invalild input, please press correct symbol for calculation")
 
