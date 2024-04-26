@@ -5,7 +5,8 @@ def divide(a, b):
     except ZeroDivisionError:
         print("Error: Division by zero is not allowed")
         return None
-
+def Addition(num1,num2):
+    return num1 + num2 
 
 
 operation = input().split()
