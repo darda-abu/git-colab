@@ -1,4 +1,12 @@
-print("hello")
+def divide(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed")
+        return None
+
+
 
 operation = input().split()
 
