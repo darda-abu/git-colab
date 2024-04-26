@@ -26,9 +26,25 @@ class Calculator:
             return None
         self.operator = '/'
     
-
-    def __str__(self) -> str:
+    def parity(self,num):
+        if num % 2 : return "Odd"
+        return "Even"
+    
+    def sign(self, num):
+        if num >= 0 : return "Positive"
+        return "negative"
+    
+    def display_text(self):
+        num1_formatted = "({}; {};)".format(self.parity(self.num1), self.sign(self.num1))
+        num2_formatted = "({}; {};)".format(self.parity(self.num2), self.sign(self.num2))
+        result_formatted = "({}; {};)".format(self.parity(self.result), self.sign(self.result))
+        return "{} {} {} = {}".format(num1_formatted, self.operator, num2_formatted, result_formatted)
+    
+    def display_digits(self):
         return "{} {} {} = {}".format(self.num1, self.operator, self.num2, self.result)
+    
+    def __str__(self) -> str:
+        return "\n".join([self.display_digits(), self.display_text()])
         
 
 if __name__ == "__main__":
