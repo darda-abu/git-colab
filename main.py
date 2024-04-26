@@ -28,4 +28,5 @@ class Calculator:
             print("Substraction: ", calc_obj.substraction(num1, num2)) 
         elif symbol == '/':
             print("Division: ", calc_obj.division(num1, num2))
-
+        elif symbol == '*':
+            print("Multiplication: ", calc_obj.multiply(num1, num2))
