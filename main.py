@@ -1,43 +1,48 @@
 class Calculator:
-    def __init__(self, num1, num2, symbol) -> None:
+    def __init__(self, num1, num2) -> None:
         self.num1 = num1
         self.num2 = num2 
-        self.symbol = symbol
     
-    def substraction(self, num1, num2) -> int:
+    def substraction(self) -> int:
         return self.num1 - self.num2 
 
-    
-    def addition(num1,num2):
+    def addition(self):
         return self.num1 + self.num2 
 
-    def multiplication(num1,num2):
+    def multiplication(self):
         return self.num1 * self.num2
 
-    def division(self, num1, num2):
+    def division(self):
         try:
             result = self.num1 / self.num2
-            return result
+            return "{:.4f}".format(result)
         except ZeroDivisionError:
             print("Error: Division by zero is not allowed")
             return None
 
-    if __name__ == "__main__":
-        num1 = int(input())
-        num2 = int(input())
-        symbol = input()
-        calc_obj = Calculator(num1, num2, symbol)
 
-
+if __name__ == "__main__":
+    print("Welcome to the Calculator App. ")
+    while (True):
+        
+        num1 = int(input("Enter First Number: "))
+        num2 = int(input("Enter Second Number: "))
+        symbol = input("Specify Operation(+, -, /, *): ")
+        calc_obj = Calculator(num1, num2)
         if symbol == '+':
-            print("Addition: ", calc_obj.addition(num1,num2)) 
+            print("Addition: ", calc_obj.addition()) 
         elif symbol == '-':
-            print("Substraction: ", calc_obj.substraction(num1, num2)) 
+            print("Substraction: ", calc_obj.substraction()) 
         elif symbol == '*':
-            print("Multiplication: ", calc_obj.multiplication(num1,num2))
+            print("Multiplication: ", calc_obj.multiplication())
         elif symbol == '/':
-            print("Division: ", calc_obj.division(num1, num2))
+            print("Division: ", calc_obj.division())
         else:
             print("Invalild input, please press correct symbol for calculation")
+        
+        option = input("Enter 'C' to continue or 'Q' to exit the program: ")
+        if option =='Q':
+            break 
+
 
 
