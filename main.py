@@ -29,6 +29,3 @@ class Calculator:
         elif symbol == '/':
             print("Division: ", calc_obj.division(num1, num2))
 
-
-
-        
